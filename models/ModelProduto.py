@@ -1,5 +1,5 @@
-from Database import Database
-from Produtos import Produto
+from models.Database import Database
+from models.Produtos import Produto
 
 class ModelProduto:
 

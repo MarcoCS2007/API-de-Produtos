@@ -64,4 +64,15 @@ class ViewXML(ViewAPI):
         root = ET.Element('erro')
         ET.SubElement(root, 'mensagem').text = str(msg)
         return ET.tostring(root, encoding='unicode')
-    
+
+class FactoryView:
+
+    @staticmethod    
+    def criar(formato: str):
+        match formato.lower():
+            case 'json':
+                return ViewJSON()
+            case 'xml':
+                return ViewXML()
+            case _:
+                raise ValueError(f"Formato desconhecido: {formato}")

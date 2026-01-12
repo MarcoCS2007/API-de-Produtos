@@ -15,6 +15,7 @@ class Database:
             self._database_path = database_path
             self._connect = None
             self._inicializado = True
+            self.create_tables()
 
     def connect(self):
         if self._connect is None:
